@@ -1,0 +1,27 @@
+{
+  "servers":[
+    {
+      "port":"1090",
+      "host":"127.0.0.1",
+      "runPeriodSeconds":30,
+      "numQueryThreads":2,
+      "queries":[
+        {
+          "obj":"java.lang:type=Memory",
+          "attr":[
+            "HeapMemoryUsage",
+            "NonHeapMemoryUsage"
+          ],
+          "resultAlias": "jvm.memory",
+          "outputWriters":[
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.StdOutWriter",
+              "settings" : {
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
